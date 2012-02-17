@@ -40,10 +40,9 @@ class Income extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, wan, misc, timestamp', 'required'),
+			array('date, name, misc', 'required'),
 			array('amount', 'numerical', 'integerOnly'=>true),
 			array('kind', 'length', 'max'=>18),
-			array('date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, kind, date, name, amount, wan, misc, timestamp', 'safe', 'on'=>'search'),
