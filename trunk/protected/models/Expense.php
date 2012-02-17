@@ -68,15 +68,15 @@ class Expense extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'kind' => 'Kind',
-			'date' => 'Date',
-			'amount' => 'Amount',
-			'wan' => 'Wan',
-			'atesaki' => 'Atesaki',
-			'misc' => 'Misc',
-			'shiharaibi' => 'Shiharaibi',
-			'timestamp' => 'Timestamp',
+			'id' => 'id',
+			'kind' => '種別',
+			'date' => '出金日付',
+			'amount' => '金額',
+			'wan' => '犬名',
+			'atesaki' => '支払先',
+			'misc' => '備考',
+			'shiharaibi' => '支払日',
+			'timestamp' => '更新日時',
 		);
 	}
 
@@ -103,6 +103,7 @@ class Expense extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array('pagesize'=>100),
 		));
 	}
 }
