@@ -2,9 +2,9 @@ body
 {
 	margin: 0;
 	padding: 0;
-	color: #555;
+	color: #222222;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
+	background-image: url("../images/fugaback.jpg");
 }
 
 #page
