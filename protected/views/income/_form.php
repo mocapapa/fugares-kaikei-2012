@@ -11,7 +11,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'kind'); ?>
-		<?php echo $form->textField($model,'kind',array('size'=>18,'maxlength'=>18)); ?>
+		<?php $b = new Ballance; ?>
+		<?php echo $form->dropDownList($model, 'kind', $b->incomeKind); ?>
 		<?php echo $form->error($model,'kind'); ?>
 	</div>
 

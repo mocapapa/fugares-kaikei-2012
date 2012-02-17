@@ -41,10 +41,9 @@ class Expense extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('wan, atesaki, misc, timestamp', 'required'),
+			array('date, shiharaibi, atesaki, misc', 'required'),
 			array('amount', 'numerical', 'integerOnly'=>true),
 			array('kind', 'length', 'max'=>21),
-			array('date, shiharaibi', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, kind, date, amount, wan, atesaki, misc, shiharaibi, timestamp', 'safe', 'on'=>'search'),
