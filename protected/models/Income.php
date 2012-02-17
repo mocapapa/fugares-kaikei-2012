@@ -67,14 +67,14 @@ class Income extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'kind' => 'Kind',
-			'date' => 'Date',
-			'name' => 'Name',
-			'amount' => 'Amount',
-			'wan' => 'Wan',
-			'misc' => 'Misc',
-			'timestamp' => 'Timestamp',
+			'id' => 'id',
+			'kind' => '種別',
+			'date' => '入金日付',
+			'name' => '名前',
+			'amount' => '金額',
+			'wan' => '犬名',
+			'misc' => '備考',
+			'timestamp' => '更新日時',
 		);
 	}
 
@@ -100,6 +100,7 @@ class Income extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array('pagesize'=>100),
 		));
 	}
 }
