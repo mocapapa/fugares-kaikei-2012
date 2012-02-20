@@ -163,16 +163,16 @@ function cont_exec(
 	else $cont .= date("Y年n月d日)", mktime(0,0,0, $monthE+1, 0, $yearE));
 	
 	$cont .= '
-<table style="width:60%">
+<table class="h_all_tl" style="width:60%">
   <tr>
-    <td colspan="2" class="dark" style="text-align:center;" width="50%">収入の部</th>
-    <td colspan="2" class="dark" style="text-align:center;" width="50%">支出の部</th>
+    <td colspan="2" class="bg2" style="text-align:center;" width="50%">収入の部</th>
+    <td colspan="2" class="bg2" style="text-align:center;" width="50%">支出の部</th>
   </tr>
   <tr>
-    <td class="dark" style="text-align:center;">適用</th>
-    <td class="dark" style="text-align:center;" width="20%">金額</th>
-    <td class="dark" style="text-align:center;">適用</th>
-    <td class="dark" style="text-align:center;" width="20%">金額</th>
+    <td class="bg2" style="text-align:center;">適用</th>
+    <td class="bg2" style="text-align:center;" width="20%">金額</th>
+    <td class="bg2" style="text-align:center;">適用</th>
+    <td class="bg2" style="text-align:center;" width="20%">金額</th>
   </tr>
 ';
 
@@ -187,14 +187,14 @@ function cont_exec(
 		$cont .= '<tr>';
 
 		if ($keyI != null) 
-			$cont .=  "<td class=\"white\">$keyI</td><td class=\"white\" style=\"text-align:right;\">". number_format_c($valueI)."</td>\n";
+			$cont .=  "<td class=\"bg1l\">$keyI</td><td class=\"bg1l\" style=\"text-align:right;\">". number_format_c($valueI)."</td>\n";
 		else 
-			$cont .=  "<td class=\"white\">&nbsp;</td><td class=\"white\">&nbsp;</td>\n";
+			$cont .=  "<td class=\"bg1l\">&nbsp;</td><td class=\"bg1l\">&nbsp;</td>\n";
 		
 		if ($keyE != null) 
-			$cont .=  "<td class=\"white\">$keyE</td><td class=\"white\" style=\"text-align:right;\">". number_format_c($valueE)."</td>\n";
+			$cont .=  "<td class=\"bg1l\">$keyE</td><td class=\"bg1l\" style=\"text-align:right;\">". number_format_c($valueE)."</td>\n";
 		else 
-			$cont .=  "<td class=\"white\">&nbsp;</td><td class=\"white\">&nbsp;</td>\n";
+			$cont .=  "<td class=\"bg1l\">&nbsp;</td><td class=\"bg1l\">&nbsp;</td>\n";
 		
 		$cont .= '
   </tr>
@@ -203,21 +203,21 @@ function cont_exec(
 	}
 
 	$cont .= '
-  <td height="1px" class="white" valign="top" colspan="4"></td></tr>
+  <td height="1px" class="bg1l" valign="top" colspan="4"></td></tr>
   <tr>
-  <td class="light">期間収入</td><td class="light" style="text-align:right;" >'. number_format_c($totalI) .'</td>
-  <td class="light">期間支出</td><td class="light" style="text-align:right;">'. number_format_c($totalE). '</td>
+  <td class="bg3l">期間収入</td><td class="bg3l" style="text-align:right;" >'. number_format_c($totalI) .'</td>
+  <td class="bg3l">期間支出</td><td class="bg3l" style="text-align:right;">'. number_format_c($totalE). '</td>
   </tr>
-  <td height="1px" class="white" valign="top" colspan="4"></td></tr>
+  <td height="1px" class="bg1l" valign="top" colspan="4"></td></tr>
   <tr>
-  <td colspan="3" class="light">期間収支</td><td class="light" style="text-align:right;">'. number_format_c($totalI-$totalE). '</td>
-  </tr>
-  <tr>
-  <td colspan="3" class="yellow">期首残高</td><td class="yellow" style="text-align:right;">'. number_format_c($accountS). '</td>
+  <td colspan="3" class="bg3l">期間収支</td><td class="bg3l" style="text-align:right;">'. number_format_c($totalI-$totalE). '</td>
   </tr>
   <tr>
-  <td height="1px" class="white" valign="top" colspan="4"></td></tr>
-  <td colspan="3" class="light">期末残高</td><td class="light" style="text-align:right;">'. number_format_c($accountE). '</td>
+  <td colspan="3" class="bgyl">期首残高</td><td class="bgyl" style="text-align:right;">'. number_format_c($accountS). '</td>
+  </tr>
+  <tr>
+  <td height="1px" class="bg1l" valign="top" colspan="4"></td></tr>
+  <td colspan="3" class="bg3l">期末残高</td><td class="bg3l" style="text-align:right;">'. number_format_c($accountE). '</td>
   </tr>
 </table>
 </font>

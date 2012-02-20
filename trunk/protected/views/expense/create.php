@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-		  array('label'=>'出金の管理', 'url'=>array('admin', 'year'=>$_GET['year'])),
+	array('label'=>'出金の管理', 'url'=>array('admin', 'year'=>$_GET['year'])),
 );
 ?>
 
