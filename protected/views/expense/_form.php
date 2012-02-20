@@ -3,21 +3,34 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'expense-form',
 	'enableAjaxValidation'=>false,
-)); ?>
+	)); ?>
 
 	<p class="note"><span class="required">*</span>の欄は必須入力です。</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
+        <table class="h_all_tl">
+	<tr>
+	    <td class="bg2" width="20%">
 		<?php echo $form->labelEx($model,'kind'); ?>
-		<?php $b = new Ballance; ?>
-		<?php echo $form->dropDownList($model, 'kind', $b->expenseKind); ?>
+            </td>
+            <td class="bg1l">
+		<?php   $b = new Ballance;
+			$expenseKind = array();
+			foreach($b->expenseKind as $kind) {
+				$expenseKind[$kind]=$kind;
+			}
+		?>
+		<?php echo $form->dropDownList($model, 'kind', $expenseKind); ?>
 		<?php echo $form->error($model,'kind'); ?>
-	</div>
+            </td>
+	</tr>
 
-	<div class="row">
+	<tr>
+	    <td class="bg2">
 		<?php echo $form->labelEx($model,'date'); ?>
+            </td>
+            <td class="bg1l">
 		<?php
 			$this->widget('zii.widgets.jui.CJuiDatePicker',
 				array(
@@ -30,34 +43,54 @@
 			);
                 ?>
 		<?php echo $form->error($model,'date'); ?>
-	</div>
+            </td>
+	</tr>
 
-	<div class="row">
+	<tr>
+	    <td class="bg2">
 		<?php echo $form->labelEx($model,'amount'); ?>
+            </td>
+            <td class="bg1l">
 		<?php echo $form->textField($model,'amount'); ?>
 		<?php echo $form->error($model,'amount'); ?>
-	</div>
+            </td>
+	</tr>
 
-	<div class="row">
+	<tr>
+	    <td class="bg2">
 		<?php echo $form->labelEx($model,'wan'); ?>
+            </td>
+            <td class="bg1l">
 		<?php echo $form->textField($model,'wan'); ?>
 		<?php echo $form->error($model,'wan'); ?>
-	</div>
+            </td>
+	</tr>
 
-	<div class="row">
+	<tr>
+	    <td class="bg2">
 		<?php echo $form->labelEx($model,'atesaki'); ?>
+            </td>
+            <td class="bg1l">
 		<?php echo $form->textField($model,'atesaki'); ?>
 		<?php echo $form->error($model,'atesaki'); ?>
-	</div>
+            </td>
+	</tr>
 
-	<div class="row">
+	<tr>
+	    <td class="bg2">
 		<?php echo $form->labelEx($model,'misc'); ?>
+            </td>
+            <td class="bg1l">
 		<?php echo $form->textField($model,'misc'); ?>
 		<?php echo $form->error($model,'misc'); ?>
-	</div>
+            </td>
+	</tr>
 
-	<div class="row">
+	<tr>
+	    <td class="bg2">
 		<?php echo $form->labelEx($model,'shiharaibi'); ?>
+            </td>
+            <td class="bg1l">
 		<?php
 			$this->widget('zii.widgets.jui.CJuiDatePicker',
 				array(
@@ -70,10 +103,12 @@
 			);
                 ?>
 		<?php echo $form->error($model,'shiharaibi'); ?>
-	</div>
+            </td>
+	</tr>
+	</table>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<div>
+		<?php echo CHtml::submitButton($model->isNewRecord ? '作成' : '保存'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

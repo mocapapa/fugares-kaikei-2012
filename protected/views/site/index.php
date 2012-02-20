@@ -24,3 +24,7 @@ echo CHtml::link('2010年度', array('site/show', 'year'=>2010));
 echo CHtml::link('2011年度', array('site/show', 'year'=>2011));
 ?>
 <br />
+<?php
+echo CHtml::link('2012年度', array('site/show', 'year'=>2012));
+?>
+<br />

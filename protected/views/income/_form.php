@@ -9,15 +9,28 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
+        <table class="h_all_tl" style="width:80%;">
+        <tr>
+            <td class="bg2" width="20%">
 		<?php echo $form->labelEx($model,'kind'); ?>
-		<?php $b = new Ballance; ?>
-		<?php echo $form->dropDownList($model, 'kind', $b->incomeKind); ?>
+            </td>
+            <td class="bg1l">
+		<?php   $b = new Ballance;
+			$incomeKind = array();
+			foreach($b->incomeKind as $kind) {
+				$incomeKind[$kind]=$kind;
+			}
+                ?>
+		<?php echo $form->dropDownList($model, 'kind', $incomeKind); ?>
 		<?php echo $form->error($model,'kind'); ?>
-	</div>
+	    </td>
+	</tr>
 
-	<div class="row">
+	<tr>
+            <td class="bg2" width="20%">
 		<?php echo $form->labelEx($model,'date'); ?>
+            </td>
+            <td class="bg1l">
                 <?php
 			$this->widget('zii.widgets.jui.CJuiDatePicker',
 				array(
@@ -30,34 +43,52 @@
 			);
                 ?>
 		<?php echo $form->error($model,'date'); ?>
-	</div>
+	    </td>
+	</tr>
 
-	<div class="row">
+	<tr>
+            <td class="bg2" width="20%">
 		<?php echo $form->labelEx($model,'name'); ?>
+            </td>
+            <td class="bg1l">
 		<?php echo $form->textField($model, 'name'); ?>
 		<?php echo $form->error($model,'name'); ?>
-	</div>
+	    </td>
+	</tr>
 
-	<div class="row">
+	<tr>
+            <td class="bg2" width="20%">
 		<?php echo $form->labelEx($model,'amount'); ?>
+            </td>
+            <td class="bg1l">
 		<?php echo $form->textField($model,'amount'); ?>
 		<?php echo $form->error($model,'amount'); ?>
-	</div>
+	    </td>
+	</tr>
 
-	<div class="row">
+	<tr>
+            <td class="bg2" width="20%">
 		<?php echo $form->labelEx($model,'wan'); ?>
+            </td>
+            <td class="bg1l">
 		<?php echo $form->textField($model, 'wan'); ?>
 		<?php echo $form->error($model,'wan'); ?>
-	</div>
+	    </td>
+	</tr>
 
-	<div class="row">
+	<tr>
+            <td class="bg2" width="20%">
 		<?php echo $form->labelEx($model,'misc'); ?>
+            </td>
+            <td class="bg1l">
 		<?php echo $form->textField($model, 'misc'); ?>
 		<?php echo $form->error($model,'misc'); ?>
-	</div>
+	    </td>
+	</tr>
+	</table>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<div>
+		<?php echo CHtml::submitButton($model->isNewRecord ? '作成' : '保存'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

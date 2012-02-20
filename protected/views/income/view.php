@@ -15,6 +15,14 @@ $this->menu=array(
 <h1>入金の表示 #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
+	'htmlOptions'=>array(
+		'class'=>'h_all_tl',
+		'border'=>'0',
+		'cellpadding'=>'3',
+		'cellspacing'=>'0',
+		'width'=>'90%',
+	),
+        'itemTemplate'=>'<tr><th class="bg2">{label}</th><td class="bg1l">{value}</td></tr>'."\n",
 	'data'=>$model,
 	'attributes'=>array(
 		'id',

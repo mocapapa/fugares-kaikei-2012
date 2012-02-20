@@ -15,16 +15,49 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'expense-grid',
 	'enableSorting'=>false,
+	'itemsCssClass'=>'h_all_tl" border="0" cellspacing="0" cellpadding="3" width="97%',
 	'dataProvider'=>$model->search(),
 	'columns'=>array(
-		'id',
-		'kind',
-		'date',
-		'amount',
-		'wan',
-		'atesaki',
-		'misc',
-		'shiharaibi',
+		array(
+			'name'=>'id',
+			'headerHtmlOptions'=>array('class'=>'bg2'),
+                        'htmlOptions'=>array('class'=>'bg1l'),
+		      ),
+		array(
+			'name'=>'kind',
+			'headerHtmlOptions'=>array('class'=>'bg2'),
+                        'htmlOptions'=>array('class'=>'bg1l'),
+		      ),
+		array(
+		        'name'=>'date',
+			'headerHtmlOptions'=>array('class'=>'bg2'),
+                        'htmlOptions'=>array('class'=>'bg1l'),
+		      ),
+		array(
+		        'name'=>'amount',
+			'headerHtmlOptions'=>array('class'=>'bg2'),
+                        'htmlOptions'=>array('class'=>'bg1l'),
+		      ),
+		array(
+		        'name'=>'wan',
+			'headerHtmlOptions'=>array('class'=>'bg2'),
+                        'htmlOptions'=>array('class'=>'bg1l'),
+		      ),
+		array(
+		        'name'=>'atesaki',
+			'headerHtmlOptions'=>array('class'=>'bg2'),
+                        'htmlOptions'=>array('class'=>'bg1l'),
+		      ),
+		array(
+		        'name'=>'misc',
+			'headerHtmlOptions'=>array('class'=>'bg2'),
+                        'htmlOptions'=>array('class'=>'bg1l'),
+		      ),
+		array(
+		        'name'=>'shiharaibi',
+			'headerHtmlOptions'=>array('class'=>'bg2'),
+                        'htmlOptions'=>array('class'=>'bg1l'),
+		      ),
 		// 'timestamp',
 		array(
 			'class'=>'CButtonColumn',
