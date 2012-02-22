@@ -20,6 +20,9 @@
 			foreach($b->incomeKind as $kind) {
 				$incomeKind[$kind]=$kind;
 			}
+			$tail = array_pop($incomeKind);
+			$incomeKind['繰越'] = '繰越';
+			$incomeKind[$tail] = $tail;
                 ?>
 		<?php echo $form->dropDownList($model, 'kind', $incomeKind); ?>
 		<?php echo $form->error($model,'kind'); ?>

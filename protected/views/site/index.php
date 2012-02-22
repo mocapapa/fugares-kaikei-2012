@@ -3,7 +3,7 @@ $this->breadcrumbs=array(
 	'Site'=>array('/site'),
 );
 ?>
-
+<h3>表示</h3>
 <?php
 echo CHtml::link('2007年度', array('site/show', 'year'=>2007));
 ?>
@@ -28,6 +28,11 @@ echo CHtml::link('2011年度', array('site/show', 'year'=>2011));
 echo CHtml::link('2012年度', array('site/show', 'year'=>2012));
 ?>
 <br />
+<br />
+<br />
+
+
+<h3>管理</h3>
 <?php
 echo CHtml::link('入金の管理(2012年度)', array('income/admin', 'year'=>2012));
 ?>
