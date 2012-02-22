@@ -28,3 +28,11 @@ echo CHtml::link('2011年度', array('site/show', 'year'=>2011));
 echo CHtml::link('2012年度', array('site/show', 'year'=>2012));
 ?>
 <br />
+<?php
+echo CHtml::link('入金の管理(2012年度)', array('income/admin', 'year'=>2012));
+?>
+<br />
+<?php
+echo CHtml::link('出金の管理(2012年度)', array('expense/admin', 'year'=>2012));
+?>
+<br />
