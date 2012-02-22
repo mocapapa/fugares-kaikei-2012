@@ -35,8 +35,10 @@ $this->menu=array(
 		      ),
 		array(
 		        'name'=>'amount',
+			'value'=>'number_format($data->amount)',
 			'headerHtmlOptions'=>array('class'=>'bg2'),
-                        'htmlOptions'=>array('class'=>'bg1l'),
+			'htmlOptions'=>array('class'=>'bg1l',
+				'style'=>'text-align:right;'),
 		      ),
 		array(
 		        'name'=>'wan',
