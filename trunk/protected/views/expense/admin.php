@@ -1,13 +1,11 @@
 <?php
+$year = $_GET['year'];
 $this->breadcrumbs=array(
-	'出金',
-	'管理',
+	$year.'年度出金管理'=>array('admin', 'year'=>$year),
 );
-
 $this->menu=array(
-	array('label'=>'出金の作成', 'url'=>array('create', 'year'=>$_GET['year'])),
+	array('label'=>'出金の作成', 'url'=>array('create', 'year'=>$year)),
 );
-
 ?>
 
 <h1>出金の管理</h1>

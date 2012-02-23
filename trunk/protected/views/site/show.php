@@ -1,8 +1,7 @@
 <?php
 $year = $_GET['year'];
 $this->breadcrumbs=array(
-	'Site'=>array('/site'),
-	$year.'年度'=>array('/site/show', 'year'=>$year),
+	$year.'年度'=>array('show', 'year'=>$year),
 );?>
 <font size="-2">
 
@@ -34,8 +33,8 @@ $this->widget('zii.widgets.jui.CJuiTabs', array(
 function contents($year, $month)
 {
 	$ballance = new Ballance();
-	$ballance->init();
 	for ($m = 4; $m <= $month; $m++) {
+		$ballance->init();
 		$ballance->calcMonth($year, $m);
 	}
 	$accountS = $ballance->accountS;

@@ -1,14 +1,14 @@
 <?php
+$year = $_GET['year'];
 $this->breadcrumbs=array(
-	'出金',
-	'表示',
+	$year.'年度出金管理'=>array('admin', 'year'=>$year),
+	'表示'=>array('view', 'id'=>$model->id, 'year'=>$year),
 );
-
 $this->menu=array(
-	array('label'=>'出金の作成', 'url'=>array('create', 'year'=>$_GET['year'])),
-	array('label'=>'出金の修正', 'url'=>array('update', 'id'=>$model->id, 'year'=>$_GET['year'])),
-	array('label'=>'出金の削除', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id, 'year'=>$_GET['year']),'confirm'=>'この項目を削除してよろしいですか?')),
-	array('label'=>'出金の管理', 'url'=>array('admin', 'year'=>$_GET['year'])),
+	array('label'=>'出金の作成', 'url'=>array('create', 'year'=>$year)),
+	array('label'=>'出金の修正', 'url'=>array('update', 'id'=>$model->id, 'year'=>$year)),
+	array('label'=>'出金の削除', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id, 'year'=>$year),'confirm'=>'この項目を削除してよろしいですか?')),
+	array('label'=>'出金の管理', 'url'=>array('admin', 'year'=>$year)),
 );
 ?>
 

@@ -1,13 +1,11 @@
 <?php
+$year = $_GET['year'];
 $this->breadcrumbs=array(
-	'入金',
-	'管理',
+	$year.'年度入金管理'=>array('admin', 'year'=>$year),
 );
-
 $this->menu=array(
-	array('label'=>'入金の作成', 'url'=>array('create', 'year'=>$_GET['year'])),
+	array('label'=>'入金の作成', 'url'=>array('create', 'year'=>$year)),
 );
-
 ?>
 
 <h1>入金の管理</h1>
@@ -53,13 +51,16 @@ $this->menu=array(
 		//'timestamp',
 		array(
 			'class'=>'CButtonColumn',
-			'viewButtonUrl'=>'Yii::app()->createUrl("/income/view", array("id" => $data["id"],
+			'viewButtonUrl'=>'Yii::app()->createUrl("/income/view", array(
+				"id" => $data["id"],
 				"year"=>$_GET["year"],
 			))',
-			'deleteButtonUrl'=>'Yii::app()->createUrl("/income/delete", array("id" =>  $data["id"],
+			'deleteButtonUrl'=>'Yii::app()->createUrl("/income/delete", array(
+				"id" =>  $data["id"],
 				"year"=>$_GET["year"],
 			))',
-			'updateButtonUrl'=>'Yii::app()->createUrl("/income/update", array("id" =>  $data["id"],
+			'updateButtonUrl'=>'Yii::app()->createUrl("/income/update", array(
+				"id" =>  $data["id"],
 				"year"=>$_GET["year"],
 			))',
 		),
