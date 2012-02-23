@@ -35,9 +35,7 @@ function contents($year, $month)
 {
 	$ballance = new Ballance();
 	$ballance->init();
-	// 当月までの総計をとる
 	for ($m = 4; $m <= $month; $m++) {
-		$ballance->cont();
 		$ballance->calcMonth($year, $m);
 	}
 	$accountS = $ballance->accountS;
@@ -63,7 +61,6 @@ function contentsUpper($year)
 	for ($m = 4; $m <= 9; $m++) {
 		$ballance->calcMonth($year, $m);
 		if ($m == 4) $accountS = $ballance->accountS;
-                $ballance->cont();
 	}
 	return cont_exec(
 		'上半期収支表',
@@ -85,13 +82,11 @@ function contentsLower($year)
 	$ballance->init();
 	for ($m = 4; $m <= 9; $m++) {
 		$ballance->calcMonth($year, $m);
-                $ballance->cont();
 	}
 	$ballance->init();
 	for ($m = 10; $m <= 15; $m++) {
 		$ballance->calcMonth($year, $m);
 		if ($m == 10) $accountS = $ballance->accountS;
-                $ballance->cont();
 	}
 	return cont_exec(
 		'下半期収支表',
@@ -114,7 +109,6 @@ function contentsYear($year)
 	for ($m = 4; $m <= 15; $m++) {
 		$ballance->calcMonth($year, $m);
 		if ($m == 4) $accountS = $ballance->accountS;
-		$ballance->cont();
         }
 	return cont_exec(
 		'年度収支表',
