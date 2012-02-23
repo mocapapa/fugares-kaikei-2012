@@ -35,14 +35,11 @@ function contents($year, $month)
 {
 	$ballance = new Ballance();
 	$ballance->init();
-	if ($month > 4) {
-		for ($m = 4; $m <= $month-1; $m++) {
-			$ballance->calcMonth($year, $m);
-			$ballance->cont();
-		}
+	// 当月までの総計をとる
+	for ($m = 4; $m <= $month; $m++) {
+		$ballance->cont();
+		$ballance->calcMonth($year, $m);
 	}
-	$ballance->init();
-	$ballance->calcMonth($year, $month);
 	$accountS = $ballance->accountS;
 	return cont_exec(
 		'月度収支表',

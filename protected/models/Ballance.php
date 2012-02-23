@@ -28,11 +28,11 @@ class Ballance {
 		'その他',
 	);
 
-	public $totalI = array();
-	public $totalE = array();
-	public $accountS = 0;
-	public $accountE;
-	public $countKind;
+	public $totalI = array(); // 期間収入
+	public $totalE = array(); // 期間支出
+	public $accountS = 0;     // 期首残高
+	public $accountE;         // 期末残高
+	public $countKind;        // 行数
 
 	public function init()
 	{
@@ -42,9 +42,10 @@ class Ballance {
 		foreach ($this->expenseKind as $kind) {
 			$this->totalE[$kind] = 0;
 		}
-		$this->countKind = (count($this->incomeKind) >= count($this->expenseKind)) ? count($this->incomeKind) : count($this->expenseKind);
+		$ci = count($this->incomeKind);
+		$ce = count($this->expenseKind);
+		$this->countKind = ($ci >= $ce) ? $ci : $ce;
 	}
-
 
 	/*
 	 * year : ex. 2010
@@ -62,7 +63,9 @@ class Ballance {
 		$current = $this->accountS;
 		$query = "Date >= '$year-$month-01' and Date < '$year-".($month+1)."-01'";
 
-		$dataIs = Income::model()->findAll($query);
+		// 繰越が先頭に無い場合の救済
+		$dataIs = Income::model()->findAll($query.' and kind = "繰越"');
+		$dataIs = array_merge($dataIs, Income::model()->findAll($query.' and kind != "繰越"'));
 		$dataEs = Expense::model()->findAll($query);
 
 		foreach ($dataIs as $dataI) {
