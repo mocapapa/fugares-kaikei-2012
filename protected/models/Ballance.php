@@ -30,8 +30,8 @@ class Ballance {
 
 	public $totalI = array(); // 期間収入
 	public $totalE = array(); // 期間支出
-	public $accountS = 0;     // 期首残高
-	public $accountE;         // 期末残高
+	public $accountS;         // 期首残高
+	public $accountE = 0;     // 期末残高
 	public $countKind;        // 行数
 
 	public function init()
@@ -60,7 +60,7 @@ class Ballance {
 			$year++;
 		}
 
-		$current = $this->accountS;
+		$current = $this->accountS = $this->accountE;
 		$query = "Date >= '$year-$month-01' and Date < '$year-".($month+1)."-01'";
 
 		// 繰越が先頭に無い場合の救済
@@ -90,9 +90,5 @@ class Ballance {
 			$current -= $dataE['amount'];
 		}
 		$this->accountE = $current;
-	}
-
-	public function cont() {
-		$this->accountS = $this->accountE;
 	}
 }	   
