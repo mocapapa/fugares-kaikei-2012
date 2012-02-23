@@ -203,12 +203,12 @@ function cont_exec(
 	}
 
 	$cont .= '
-  <td height="1px" class="bg1l" valign="top" colspan="4"></td></tr>
+  <td style="padding: 1px 5px;" class="bg1l" valign="top" colspan="4"></td></tr>
   <tr>
   <td class="bg3l">期間収入</td><td class="bg3l" style="text-align:right;" >'. number_format_c($totalI) .'</td>
   <td class="bg3l">期間支出</td><td class="bg3l" style="text-align:right;">'. number_format_c($totalE). '</td>
   </tr>
-  <td height="1px" class="bg1l" valign="top" colspan="4"></td></tr>
+  <td style="padding: 1px 5px;" class="bg1l" valign="top" colspan="4"></td></tr>
   <tr>
   <td colspan="3" class="bg3l">期間収支</td><td class="bg3l" style="text-align:right;">'. number_format_c($totalI-$totalE). '</td>
   </tr>
@@ -216,7 +216,7 @@ function cont_exec(
   <td colspan="3" class="bgyl">期首残高</td><td class="bgyl" style="text-align:right;">'. number_format_c($accountS). '</td>
   </tr>
   <tr>
-  <td height="1px" class="bg1l" valign="top" colspan="4"></td></tr>
+  <td style="padding: 1px 5px;" class="bg1l" valign="top" colspan="4"></td></tr>
   <td colspan="3" class="bg3l">期末残高</td><td class="bg3l" style="text-align:right;">'. number_format_c($accountE). '</td>
   </tr>
 </table>
