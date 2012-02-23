@@ -1,13 +1,13 @@
 <?php
+$year = $_GET['year'];
 $this->breadcrumbs=array(
-	'入金',
-	'修正',
+	$year.'年度入金管理'=>array('admin', 'year'=>$year),
+	'修正'=>array('update', 'id'=>$model->id, 'year'=>$year),
 );
-
 $this->menu=array(
-	array('label'=>'入金の作成', 'url'=>array('create', 'year'=>$_GET['year'])),
-	array('label'=>'入金の表示', 'url'=>array('view', 'id'=>$model->id, 'year'=>$_GET['year'])),
-	array('label'=>'入金の管理', 'url'=>array('admin', 'year'=>$_GET['year'])),
+	array('label'=>'入金の作成', 'url'=>array('create', 'year'=>$year)),
+	array('label'=>'入金の表示', 'url'=>array('view', 'id'=>$model->id, 'year'=>$year)),
+	array('label'=>'入金の管理', 'url'=>array('admin', 'year'=>$year)),
 );
 ?>
 

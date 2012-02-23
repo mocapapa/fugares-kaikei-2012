@@ -1,8 +1,3 @@
-<?php
-$this->breadcrumbs=array(
-	'Site'=>array('/site'),
-);
-?>
 <h3>表示</h3>
 <?php
 echo CHtml::link('2007年度', array('site/show', 'year'=>2007));
