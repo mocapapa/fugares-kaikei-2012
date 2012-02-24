@@ -19,18 +19,18 @@ div.active {background-position: left bottom;}
 table.h_all_tl {font-size:96%; border-top:solid 1px #444444; border-left:solid 1px #444444; margin-top:5px; margin-left:10px; margin-bottom:15px;border-collapse:collapse;empty-cells: show;}
 table.h_all_tl tr {border-right:solid 1px #444444; border-bottom:solid 1px #444444;}
 table.h_all_tl th {border-right:solid 1px #444444; border-bottom:solid 1px #444444; background-color:#eabf9c; color:#444444;}
-.bg1 {border-right:solid 1px #444444; border-bottom:solid 1px #444444; background-color:#ffffff;}
-.bg1l {border-right:solid 1px #444444; border-bottom:solid 1px #444444; background-color:#ffffff; text-align:left;}
+.bg1 {border-right:solid 1px #444444; border-bottom:solid 1px #444444;}
+.bg1l {border-right:solid 1px #444444; border-bottom:solid 1px #444444; text-align:left;}
 .bg2 {border-right:solid 1px #444444; border-bottom:solid 1px #444444; background-color:#eabf9c;}
 .bg2l {border-right:solid 1px #444444; border-bottom:solid 1px #444444; background-color:#eabf9c; text-align:left;}
 .bg3 {border-right:solid 1px #444444; border-bottom:solid 1px #444444; background-color:#fbe6d5;}
 .bg3l {border-right:solid 1px #444444; border-bottom:solid 1px #444444; background-color:#fbe6d5; text-align:left;}
 .bgy {border-right:solid 1px #444444; border-bottom:solid 1px #444444; background-color:#ffffdd;}
 .bgyl {border-right:solid 1px #444444; border-bottom:solid 1px #444444; background-color:#ffffdd; text-align:left;}
-
-
 .bg1p {border-right:solid 1px #444444; border-bottom:solid 1px #444444; background-color:pink;}
 .bg1lp {border-right:solid 1px #444444; border-bottom:solid 1px #444444; background-color:pink; text-align:left;}
+
+.odd {background: #fbe6d5;}
 
 /* tableレイアウト用 */
 #layout_t{ width:100%; border:none;}
